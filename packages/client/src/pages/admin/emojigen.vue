@@ -11,9 +11,9 @@
 
 		<FormRadios v-model="emojiAlign" class="_formBlock">
 			<template #label>{{ $ts.emojiAlign }}</template>
-			<option value="left"><i class="fa-solid fa-align-left"/></option>
-			<option value="center"><i class="fa-solid fa-align-center"></i></option>
-			<option value="right"><i class="fa-solid fa-align-right"/></option>
+			<option value="left"><i class="fas fa-align-left"/></option>
+			<option value="center"><i class="fas fa-align-center"></i></option>
+			<option value="right"><i class="fas fa-align-right"/></option>
 		</FormRadios>
 
 		<FormSection>
@@ -47,7 +47,7 @@
 				</div>
 			</div>
 
-			<FormInput v-model="emojiColor" class="_formBlock">
+			<FormInput v-model="emojiColor" class="_formBlock" :style="{ color: '#' + emojiColor }">
 				<template #prefix><i class="fas fa-palette"></i></template>
 				<template #label>{{ $ts.emojiColor }}</template>
 				<template #caption>#RRGGBB</template>
@@ -59,7 +59,7 @@
 		<FormSection>
 			<template #label>{{ $ts.preview }}</template>
 			<img :src="emojiUrl" class="img" :alt="emojiName"/>
-			<a href="{{ emojiUrl }}"><p>{{ emojiUrl }}</p></a>
+			<MkLink v-if="emojiUrl" :url="emojiUrl">{{ emojiUrl }}</MkLink>
 		</FormSection>
 		<FormButton primary class="_formBlock" @click="emojiApproval">{{ $ts.emojiApproval }}</FormButton>
 	</div>
@@ -74,6 +74,7 @@ import FormTextarea from '@/components/form/textarea.vue';
 import FormRadios from '@/components/form/radios.vue';
 import FormSection from '@/components/form/section.vue';
 import FormButton from '@/components/ui/button.vue';
+import MkLink from '@/components/link.vue';
 import * as os from '@/os';
 import * as symbols from '@/symbols';
 import {defaultStore} from "@/store";
@@ -88,6 +89,7 @@ export default defineComponent({
 		FormSection,
 		FormSwitch,
 		FormButton,
+		MkLink,
 	},
 
 	emits: ['info'],
