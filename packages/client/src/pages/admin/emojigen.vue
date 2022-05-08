@@ -109,7 +109,7 @@ export default defineComponent({
 			font: 'notosans-mono-bold',
 			emojiColor: '38BA91',
 			emojiUrl: '',
-			accentColors: ['#e36749', '#f29924', '#98c934', '#34c9a9', '#34a1c9', '#606df7', '#8d34c9', '#e84d83']
+			accentColors: ['#E7BA95', '#E7E7B0', '#B0E7CB', '#96E7E7', '#96CCE7', '#97B0E7', '#CECEFF', '#FF9D9D']
 		}
 	},
 
