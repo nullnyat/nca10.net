@@ -43,8 +43,8 @@
 					<header>
 						<MkUserName class="name" :user="user"/>
 						<span class="acct">@{{ acct(user) }}</span>
-						<span v-if="user.isAdmin" class="staff"><img style="height: 20px;transform: translateY(4px);" src="https://s3.nca10.net/misskey/cb40a22b-cccf-490d-b224-bffa359a3462.png"/></span>
-						<span v-if="user.isModerator" class="staff"><img style="height: 20px;transform: translateY(4px);" src="https://s3.nca10.net/misskey/cb40a22b-cccf-490d-b224-bffa359a3462.png"/></span>
+						<span v-if="user.isAdmin" class="staff"><img style="height: 20px;transform: translateY(4px);" src="https://s3.nca10.net/misskey/622dcedb-865a-4668-9779-41b02aa50927.png"/></span>
+						<span v-if="user.isModerator" class="staff"><img style="height: 20px;transform: translateY(4px);" src="https://s3.nca10.net/misskey/622dcedb-865a-4668-9779-41b02aa50927.png"/></span>
 						<span v-if="user.isSilenced" class="punished"><i class="fas fa-microphone-slash"></i></span>
 						<span v-if="user.isSuspended" class="punished"><i class="fas fa-snowflake"></i></span>
 					</header>

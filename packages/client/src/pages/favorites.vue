@@ -3,7 +3,7 @@
 	<MkPagination ref="pagingComponent" :pagination="pagination">
 		<template #empty>
 			<div class="_fullinfo">
-				<img src="https://s3.nca10.net/misskey/391b11c7-ac02-4cd1-948e-86877f79f6fb.png" class="_ghost"/>
+				<img src="https://s3.nca10.net/misskey/3e1a7f0c-b106-41a1-b4ea-3ac896a0f3a4.png" class="_ghost"/>
 				<div>{{ $ts.noNotes }}</div>
 			</div>
 		</template>
