@@ -8,7 +8,6 @@
 				<div class="banner">
 					<img :src="$instance.iconUrl || '/favicon.ico'" alt="" class="icon"/>
 				</div>
-
 				<MkInfo v-if="noMaintainerInformation" warn class="info">{{ $ts.noMaintainerInformationWarning }} <MkA to="/admin/settings" class="_link">{{ $ts.configure }}</MkA></MkInfo>
 				<MkInfo v-if="noBotProtection" warn class="info">{{ $ts.noBotProtectionWarning }} <MkA to="/admin/security" class="_link">{{ $ts.configure }}</MkA></MkInfo>
 
@@ -121,11 +120,6 @@ export default defineComponent({
 				to: '/admin/emojis',
 				active: page.value === 'emojis',
 			}, {
-				icon: 'fas fa-laugh',
-				text: i18n.ts.emojiGen,
-				to: '/admin/emojigen',
-				active: page.value === 'emojigen',
-			}, {
 				icon: 'fas fa-globe',
 				text: i18n.ts.federation,
 				to: '/admin/federation',
@@ -219,7 +213,6 @@ export default defineComponent({
 				case 'overview': return defineAsyncComponent(() => import('./overview.vue'));
 				case 'users': return defineAsyncComponent(() => import('./users.vue'));
 				case 'emojis': return defineAsyncComponent(() => import('./emojis.vue'));
-				case 'emojigen': return defineAsyncComponent(() => import('./emojigen.vue'));
 				case 'federation': return defineAsyncComponent(() => import('../federation.vue'));
 				case 'queue': return defineAsyncComponent(() => import('./queue.vue'));
 				case 'files': return defineAsyncComponent(() => import('./files.vue'));
