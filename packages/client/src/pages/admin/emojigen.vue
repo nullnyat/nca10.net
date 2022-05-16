@@ -121,7 +121,7 @@ export default defineComponent({
 			//https://emoji-gen.ninja/result?text=%E7%B5%B5%E6%96%87%0A%E5%AD%97%E3%80%82&color=EC71A1FF&back_color=00000000&font=notosans-mono-bold&size_fixed=false&align=center&stretch=true&public_fg=true&locale=ja
 
 			const apiUrl = `https://emoji-gen.ninja/emoji`
-			let query = {"text": encodeURI(this.text), "color": this.emojiColor.replace('#','') + "FF", "back_color": "00000000", "font": this.font, "size_fixed": this.emojiSizeFixed, "align": this.emojiAlign, "stretch": this.emojiStretch, "public_fg": "false", "locale": "ja"}
+			let query = {"text": encodeURI(this.text), "color": this.emojiColor.replace('#','') + "FF", "back_color": "00000000", "font": this.font, "size_fixed": this.emojiSizeFixed, "align": this.emojiAlign, "stretch": !this.emojiStretch, "public_fg": "false", "locale": "ja"}
 
 			this.emojiUrl = apiUrl + '?' + Object.entries(query).map((e) => `${e[0]}=${e[1]}`).join('&');
 
