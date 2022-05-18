@@ -2,7 +2,7 @@
 	id: '5cba19a8-b0e0-42b2-9ab2-35ffd623b045',
 	base: 'dark',
 	desc: 'ぬぁ～んဗ',
-	name: 'Ncat.',
+	name: 'Ncat',
 	props: {
 		bg: '#13141C',
 		fg: '#FFF',

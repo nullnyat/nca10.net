@@ -19,9 +19,7 @@
 			</div>
 			<div class="fg">
 				<h1>
-					<!-- 背景色によってはロゴが見えなくなるのでとりあえず無効に -->
-					<!-- <img class="logo" v-if="meta.logoImageUrl" :src="meta.logoImageUrl"><span v-else class="text">{{ instanceName }}</span> -->
-					<span class="text">{{ instanceName }}</span>
+					<img v-if="meta.logoImageUrl" class="logo" :src="meta.logoImageUrl"><span v-else class="text">{{ instanceName }}</span>
 				</h1>
 				<div class="about">
 					<div class="desc" v-html="meta.description || $ts.headlineMisskey"></div>
@@ -32,7 +30,7 @@
 				<div v-if="onlineUsersCount && stats" class="status">
 					<div>
 						<I18n :src="$ts.nUsers" text-tag="span" class="users">
-							<template #n><b>3</b></template>
+							<template #n><b>{{ number(stats.originalUsersCount) }}</b></template>
 						</I18n>
 						<I18n :src="$ts.nNotes" text-tag="span" class="notes">
 							<template #n><b>{{ number(stats.originalNotesCount) }}</b></template>
