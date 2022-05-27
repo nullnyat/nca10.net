@@ -2,8 +2,8 @@
 <svg :viewBox="`0 0 ${ viewBoxX } ${ viewBoxY }`" style="overflow:visible">
 	<defs>
 		<linearGradient :id="gradientId" x1="0" x2="0" y1="1" y2="0">
-			<stop offset="0%" stop-color="hsl(200, 80%, 70%)"></stop>
-			<stop offset="100%" stop-color="hsl(90, 80%, 70%)"></stop>
+			<stop offset="0%" stop-color="hsl(200, 62%, 74%)"></stop>
+			<stop offset="100%" stop-color="hsl(180, 63%, 75%)"></stop>
 		</linearGradient>
 		<mask :id="maskId" x="0" y="0" :width="viewBoxX" :height="viewBoxY">
 			<polygon

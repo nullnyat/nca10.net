@@ -53,7 +53,7 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	reactions: {
 		where: 'account',
-		default: ['👍', '❤️', '😆', '🤔', '😮', '🎉', '💢', '😥', '😇', '🍮']
+		default: [':wakaru:', ':love_nullcatchan:', ':nadenade_neko:', ':iihanasi:', ':aruaru:', ':blobcataww:', ':cry_nullcatchan:', '🥴', '🤏', '😇']
 	},
 	mutedWords: {
 		where: 'account',
@@ -68,16 +68,13 @@ export const defaultStore = markRaw(new Storage('base', {
 		where: 'deviceAccount',
 		default: [
 			'notifications',
-			'favorites',
-			'drive',
+			'messaging',
+			'antennas',
 			'followRequests',
 			'-',
-			'featured',
-			'explore',
-			'announcements',
+			'drive',
+			'pages',
 			'search',
-			'-',
-			'ui',
 		]
 	},
 	visibility: {
@@ -257,7 +254,7 @@ type Plugin = {
  */
 export class ColdDeviceStorage {
 	public static default = {
-		lightTheme: require('@/themes/d-ncat.json5') as Theme,
+		lightTheme: require('@/themes/l-ncat.json5') as Theme,
 		darkTheme: require('@/themes/d-ncat.json5') as Theme,
 		syncDeviceDarkMode: true,
 		plugins: [] as Plugin[],

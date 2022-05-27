@@ -2,7 +2,7 @@
 	id: '5cba19a8-b0e0-42b2-9ab2-35ffd623b045',
 	base: 'dark',
 	desc: 'ぬぁ～んဗ',
-	name: 'Ncat',
+	name: 'NCAT-DARK',
 	props: {
 		bg: '#13141C',
 		fg: '#FFF',
@@ -15,8 +15,7 @@
 		error: '#FF9D9D',
 		warn: '#E7E7B0',
 		hashtag: '#96CCE7',
-		infoWarnFg: '#E7BA95',
-		infoWarnBg: '#E7D3B0',
-	},
-	author: '@n@nca10.net',
+		infoWarnBg: 'rgba(255, 255, 255, 0)',
+		infoWarnFg: '#E7E7B0',
+	}
 }

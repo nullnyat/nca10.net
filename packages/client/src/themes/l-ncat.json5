@@ -1,0 +1,21 @@
+{
+	id: 'bdb98d1c-71a4-42aa-b693-a57c1fc50720',
+	base: 'light',
+	desc: 'ぬぁ～んဗ',
+	name: 'NCAT-LIGHT',
+	props: {
+		bg: '#E0F0FF',
+		fg: '#13141C',
+		link: '#79CFA1',
+		warn: '#dbdb8a',
+		error: '#f58282',
+		navBg: '@bg',
+		panel: '@bg',
+		accent: '#96CCE7',
+		renote: '#79CFA1',
+		hashtag: '#79badb',
+		success: '#79CFA1',
+    infoWarnBg: 'rgba(255, 255, 255, 0)',
+		infoWarnFg: '#dbdb8a',
+	}
+}

@@ -73,6 +73,7 @@
 		codeNumber: '#0fbbbb',
 		codeBoolean: '#62b70c',
 		htmlThemeColor: '@bg',
+		online: '#79CFA1',
 		X2: ':darken<2<@panel',
 		X3: 'rgba(0, 0, 0, 0.05)',
 		X4: 'rgba(0, 0, 0, 0.1)',

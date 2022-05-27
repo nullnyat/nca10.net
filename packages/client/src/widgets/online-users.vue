@@ -68,7 +68,7 @@ defineExpose<WidgetComponentExpose>({
 
 	> .text {
 		::v-deep(b) {
-			color: #96E7E7;
+			color: var(--online);
 		}
 
 		::v-deep(span) {
