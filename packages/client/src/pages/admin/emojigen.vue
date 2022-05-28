@@ -1,69 +1,69 @@
 <template>
-<MkSpacer :content-max="700" :margin-min="16" :margin-max="32">
-	<div class="cwepdizn _formRoot">
-		<FormInput v-model="emojiName" class="_formBlock">
-			<template #label>{{ $ts.emojiName }}</template>
-		</FormInput>
-
-		<FormTextarea v-model="text" class="_formBlock">
-			<template #label>{{ $ts.text }}</template>
-		</FormTextarea>
-
-		<FormRadios v-model="emojiAlign" class="_formBlock">
-			<template #label>{{ $ts.emojiAlign }}</template>
-			<option value="left"><i class="fas fa-align-left"/></option>
-			<option value="center"><i class="fas fa-align-center"></i></option>
-			<option value="right"><i class="fas fa-align-right"/></option>
-		</FormRadios>
-
-		<FormSection>
-			<template #label>{{ $ts.emojiSizeSetting }}</template>
-			<FormSwitch v-model="emojiSizeFixed" class="_formBlock">
-				<template #label>{{ $ts.emojiSizeFixed }}</template>
-			</FormSwitch>
-
-			<FormSwitch v-model="emojiStretch" class="_formBlock">
-				<template #label>{{ $ts.emojiStretch }}</template>
-			</FormSwitch>
-		</FormSection>
-
-		<FormRadios v-model="font" class="_formBlock">
-			<template #label>{{ $ts.font }}</template>
-			<option value="notosans-mono-bold">Noto Sans Mono CJK JP Bold</option>
-			<option value="mplus-1p-black">M+ 1p black</option>
-			<option value="rounded-x-mplus-1p-black">Rounded M+ 1p black</option>
-			<option value="ipamjm">IPAmj明朝</option>
-			<option value="aoyagireisyoshimo">青柳隷書しも</option>
-			<option value="LinLibertine_RBah">LinLibertine Bold</option>
-		</FormRadios>
-
-		<FormSection>
-			<template #label>{{ $ts.emojiColor }}</template>
-			<div class="cwepdizn-colors">
-				<div class="row">
-					<button v-for="color in accentColors" :key="color" class="color rounded _button" @click="setAccentColor(color)">
-						<div class="preview" :style="{ background: color }"></div>
-					</button>
-				</div>
-			</div>
-
-			<FormInput v-model="emojiColor" class="_formBlock" :style="{ color: '#' + emojiColor }">
-				<template #prefix><i class="fas fa-palette"></i></template>
-				<template #label>{{ $ts.emojiColor }}</template>
-				<template #caption>#RRGGBB</template>
+	<MkSpacer :content-max="700" :margin-min="16" :margin-max="32">
+		<div class="cwepdizn _formRoot">
+			<FormInput v-model="emojiName" class="_formBlock">
+				<template #label>{{ $ts.emojiName }}</template>
 			</FormInput>
-		</FormSection>
 
-		<FormButton primary class="_formBlock" @click="emojiGenerate">{{ $ts.emojiGenerate }}</FormButton>
+			<FormTextarea v-model="text" class="_formBlock">
+				<template #label>{{ $ts.text }}</template>
+			</FormTextarea>
 
-		<FormSection>
-			<template #label>{{ $ts.preview }}</template>
-			<p><img :src="emojiUrl" class="img" :alt="emojiName"/></p>
-			<MkLink v-if="emojiUrl" :url="emojiUrl">{{ emojiUrl }}</MkLink>
-		</FormSection>
-		<FormButton primary class="_formBlock" @click="emojiApproval">{{ $ts.emojiApproval }}</FormButton>
-	</div>
-</MkSpacer>
+			<FormRadios v-model="emojiAlign" class="_formBlock">
+				<template #label>{{ $ts.emojiAlign }}</template>
+				<option value="left"><i class="fas fa-align-left"/></option>
+				<option value="center"><i class="fas fa-align-center"></i></option>
+				<option value="right"><i class="fas fa-align-right"/></option>
+			</FormRadios>
+
+			<FormSection>
+				<template #label>{{ $ts.emojiSizeSetting }}</template>
+				<FormSwitch v-model="emojiSizeFixed" class="_formBlock">
+					<template #label>{{ $ts.emojiSizeFixed }}</template>
+				</FormSwitch>
+
+				<FormSwitch v-model="emojiStretch" class="_formBlock">
+					<template #label>{{ $ts.emojiStretch }}</template>
+				</FormSwitch>
+			</FormSection>
+
+			<FormRadios v-model="font" class="_formBlock">
+				<template #label>{{ $ts.font }}</template>
+				<option value="rounded-x-mplus-1p-black">Rounded M+ 1p black</option>
+				<option value="notosans-mono-bold">Noto Sans Mono CJK JP Bold</option>
+				<option value="mplus-1p-black">M+ 1p black</option>
+				<option value="ipamjm">IPAmj明朝</option>
+				<option value="aoyagireisyoshimo">青柳隷書しも</option>
+				<option value="LinLibertine_RBah">LinLibertine Bold</option>
+			</FormRadios>
+
+			<FormSection>
+				<template #label>{{ $ts.emojiColor }}</template>
+				<div class="cwepdizn-colors">
+					<div class="row">
+						<button v-for="color in accentColors" :key="color" class="color rounded _button" @click="setAccentColor(color)">
+							<div class="preview" :style="{ background: color }"></div>
+						</button>
+					</div>
+				</div>
+
+				<FormInput v-model="emojiColor" class="_formBlock" :style="{ color: '#' + emojiColor }">
+					<template #prefix><i class="fas fa-palette"></i></template>
+					<template #label>{{ $ts.emojiColor }}</template>
+					<template #caption>#RRGGBB</template>
+				</FormInput>
+			</FormSection>
+
+			<FormButton primary class="_formBlock" @click="emojiGenerate">{{ $ts.emojiGenerate }}</FormButton>
+
+			<FormSection>
+				<template #label>{{ $ts.preview }}</template>
+				<p><img :src="emojiUrl" class="img" :alt="emojiName"/></p>
+				<MkLink v-if="emojiUrl" :url="emojiUrl">{{ emojiUrl }}</MkLink>
+			</FormSection>
+			<FormButton primary class="_formBlock" @click="emojiApproval">{{ $ts.emojiApproval }}</FormButton>
+		</div>
+	</MkSpacer>
 </template>
 
 <script lang="ts">
@@ -79,8 +79,6 @@ import * as os from '@/os';
 import * as symbols from '@/symbols';
 import {defaultStore} from "@/store";
 import {stream} from "@/stream";
-
-
 export default defineComponent({
 	components: {
 		FormInput,
@@ -91,9 +89,7 @@ export default defineComponent({
 		FormButton,
 		MkLink,
 	},
-
 	emits: ['info'],
-
 	data() {
 		return {
 			[symbols.PAGE_INFO]: {
@@ -106,35 +102,25 @@ export default defineComponent({
 			emojiAlign: 'center',
 			emojiSizeFixed: false,
 			emojiStretch: false,
-			font: 'notosans-mono-bold',
-			emojiColor: '38BA91',
+			font: 'rounded-x-mplus-1p-black',
+			emojiColor: '96CCE7',
 			emojiUrl: '',
 			accentColors: ['#E7BA95', '#E7E7B0', '#B0E7CB', '#96E7E7', '#96CCE7', '#97B0E7', '#CECEFF', '#FF9D9D']
 		}
 	},
-
 	methods: {
 		async init() {
 		},
-
 		emojiGenerate() {
 			//https://emoji-gen.ninja/result?text=%E7%B5%B5%E6%96%87%0A%E5%AD%97%E3%80%82&color=EC71A1FF&back_color=00000000&font=notosans-mono-bold&size_fixed=false&align=center&stretch=true&public_fg=true&locale=ja
-
 			const apiUrl = `https://emoji-gen.ninja/emoji`
 			let query = {"text": encodeURI(this.text), "color": this.emojiColor.replace('#','') + "FF", "back_color": "00000000", "font": this.font, "size_fixed": this.emojiSizeFixed, "align": this.emojiAlign, "stretch": !this.emojiStretch, "public_fg": "false", "locale": "ja"}
-
 			this.emojiUrl = apiUrl + '?' + Object.entries(query).map((e) => `${e[0]}=${e[1]}`).join('&');
-
-
-
 		},
-
 		emojiApproval: function () {
-
 			//emojiUploadでは、絵文字をdrive/files/upload-from-urlでアップロードしたあと、emojiAddでリネーム、登録をして、emojiAddの戻り値(絵文字のid)を返す
 			const emojiUpload = () => new Promise(async resolve => {
 				const marker = Math.random().toString(); // TODO: UUIDとか使う
-
 				//先にコネクションを貼って監視する
 				const connection = stream.useChannel('main');
 				connection.on('urlUploadFinished', async data => {
@@ -144,61 +130,49 @@ export default defineComponent({
 						connection.dispose();
 					}
 				});
-
 				await os.api('drive/files/upload-from-url', {
 					url: this.emojiUrl,
 					folderId: defaultStore.state.uploadFolder,
 					marker
 				});
-
 				//リネーム→登録→登録されたIDを返す
 				const emojiAdd = (fileId) => new Promise<Record<string, any> | null>(async resolve => {
 					await os.api('drive/files/update', {
 						fileId,
 						name: this.emojiName + '.png',
 					});
-
 					const response = await os.api('admin/emoji/add', {
 						fileId,
 					})
-
 					resolve(response);
 				})
 			});
-
 			//emoji関数 admin/emoji/listでは、idによる検索ができないため、自分のidをuntilIdに入れて1つ前のidを取得してからそれをsinceIdに指定して、絵文字情報をlist→objectで取得する
 			const emoji = (emojiId) => new Promise<Record<string, any> | null>(async resolve => {
 				const sinceId = await os.api('admin/emoji/list', {
 					limit: 1,
 					untilId: emojiId.id
 				})
-
 				if (!sinceId) {
 					resolve(null);
 					return;
 				}
-
 				const id = await os.api('admin/emoji/list', {
 					limit: 1,
 					sinceId: sinceId[0].id
 				});
-
 				if (!id) {
 					resolve(null);
 					return;
 				}
-
 				resolve(id[0]);
 			});
-
 			//edit関数には、emojiのobjectを渡す
 			const edit = (emoji) => {
 				os.popup(import('./emoji-edit-dialog.vue'), {
 					emoji: emoji
 				});
 			};
-
-
 			(async () => {
 				await this.emojiGenerate()
 				const emojiId = await emojiUpload();//emojiIdはファイルID emojiUploadはファイルIDを返す
@@ -206,21 +180,17 @@ export default defineComponent({
 				edit(emojiObj);
 			})();
 		},
-
 		setAccentColor(color){
 			this.emojiColor = color.replace('#', '');
 		}
 	},
 });
-
-
 </script>
 
 <style lang="scss" scoped>
 .cwepdizn {
 	::v-deep(.cwepdizn-colors) {
 		text-align: center;
-
 		> .row {
 			> .color {
 				display: inline-block;
@@ -228,7 +198,6 @@ export default defineComponent({
 				width: 64px;
 				height: 64px;
 				border-radius: 8px;
-
 				> .preview {
 					position: absolute;
 					top: 0;
@@ -242,25 +211,20 @@ export default defineComponent({
 					box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
 					transition: transform 0.15s ease;
 				}
-
 				&:hover {
 					> .preview {
 						transform: scale(1.1);
 					}
 				}
-
 				&.active {
 					box-shadow: 0 0 0 2px var(--divider) inset;
 				}
-
 				&.rounded {
 					border-radius: 999px;
-
 					> .preview {
 						border-radius: 999px;
 					}
 				}
-
 				&.char {
 					line-height: 42px;
 				}
@@ -269,4 +233,3 @@ export default defineComponent({
 	}
 }
 </style>
-

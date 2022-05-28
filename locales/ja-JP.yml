@@ -1,7 +1,7 @@
 _lang_: "ぬるきゃご"
 
 headlineMisskey: "ノートでつにゃがるネットワーク"
-introMisskey: "ようこそ！Misskeyは、オープンソースの分散型マイクロブログサービスだよ。\n「ノート」を作成して、いま起こっていることを共有したり、ぼくについて皆に発信しよう📡\n「リアクション」機能で、皆のノートに素早く反応を追加することもできるよ👍\n新しい世界を探検しよう🚀"
+introMisskey: "ようこそ！Misskeyは、オープンソースの分散型マイクロブログサービスだよ。\n「ノート」を作成して、いま起こっていることを共有したり、ぼくについて皆に発信しよう:bibibi_nullcatchan:\n「リアクション」機能で、皆のノートに素早く反応を追加することもできるよ:love_nullcatchan:\n新しい世界を探検しよう:nyancat_nullcatchan:"
 monthAndDay: "{month}月 {day}日"
 search: "検索"
 notifications: "通知"
@@ -844,6 +844,15 @@ oneDay: "1日"
 oneWeek: "1週間"
 reflectMayTakeTime: "反映されるまで時間がかかる場合があります。"
 failedToFetchAccountInformation: "アカウント情報の取得に失敗しました"
+
+emojiGen: "絵文字を生成"
+emojiAlign: "文字揃え"
+emojiSizeSetting: "サイズ調整"
+emojiSizeFixed: "文字サイズを固定する"
+emojiStretch: "自動で伸縮しない"
+emojiGenerate: "生成"
+emojiColor: "カラーコード"
+emojiApproval: "絵文字を登録"
 
 _emailUnavailable:
   used: "既に使用されてるよ"

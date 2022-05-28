@@ -120,6 +120,11 @@ export default defineComponent({
 				to: '/admin/emojis',
 				active: page.value === 'emojis',
 			}, {
+				icon: 'fas fa-laugh',
+				text: i18n.ts.emojiGen,
+				to: '/admin/emojigen',
+				active: page.value === 'emojigen',
+			}, {
 				icon: 'fas fa-globe',
 				text: i18n.ts.federation,
 				to: '/admin/federation',
@@ -214,6 +219,7 @@ export default defineComponent({
 				case 'users': return defineAsyncComponent(() => import('./users.vue'));
 				case 'emojis': return defineAsyncComponent(() => import('./emojis.vue'));
 				case 'federation': return defineAsyncComponent(() => import('../federation.vue'));
+				case 'emojigen': return defineAsyncComponent(() => import('./emojigen.vue'));
 				case 'queue': return defineAsyncComponent(() => import('./queue.vue'));
 				case 'files': return defineAsyncComponent(() => import('./files.vue'));
 				case 'announcements': return defineAsyncComponent(() => import('./announcements.vue'));

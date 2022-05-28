@@ -129,13 +129,6 @@ const add = async (ev: MouseEvent) => {
 	os.promiseDialog(promise);
 };
 
-const create = async (ev: MouseEvent) => {
-	await os.popupMenu([
-		{ type: 'button', text: '絵文字ジェネレーター', action: () => window.open('https://emoji-gen.ninja/') },
-		{ type: 'button', text: 'MEGAMOJI', action: () => window.open('https://zk-phi.github.io/MEGAMOJI/') }
-	], (ev.currentTarget ?? ev.target ?? undefined) as HTMLElement | undefined);
-};
-
 const edit = (emoji) => {
 	os.popup(import('./emoji-edit-dialog.vue'), {
 		emoji: emoji
@@ -282,11 +275,6 @@ defineExpose({
 			icon: 'fas fa-plus',
 			text: i18n.ts.addEmoji,
 			handler: add,
-		}, {
-			asFullButton: true,
-			icon: 'fas fa-pencil-alt',
-			text: '絵文字を作成',
-			handler: create,
 		}, {
 			icon: 'fas fa-ellipsis-h',
 			handler: menu,
