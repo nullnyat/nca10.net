@@ -360,8 +360,8 @@ antennaExcludeKeywords: "除外キーワード"
 antennaKeywordsDescription: "スペースで区切るとAND指定ににゃって、改行で区切るとOR指定ににゃるよ"
 notifyAntenna: "新しいノートを通知する"
 withFileAntenna: "ファイルが添付されたノートのみ"
-enableServiceworker: "ServiceWorkerを有効にするよ"
 antennaUsersDescription: "ユーザー名を改行で区切って指定するよ"
+enableServiceworker: "ブラウザへのプッシュ通知を有効にするよ"
 caseSensitive: "大文字小文字を区別する"
 withReplies: "返信を含む"
 connectedTo: "次のアカウントに接続されてるよ"
@@ -429,7 +429,7 @@ quoteQuestion: "引用として添付する？"
 noMessagesYet: "まだチャットはにゃいよ"
 newMessageExists: "新しいメッセージがあるよ"
 onlyOneFileCanBeAttached: "メッセージに添付できるファイルはひとつだよ"
-signinRequired: "おうちに入ってきてね"
+signinRequired: "続きをする前におうちに入ってきてね"
 invitations: "招待"
 invitationCode: "招待状"
 checking: "確認しているよ"
@@ -844,6 +844,9 @@ oneDay: "1日"
 oneWeek: "1週間"
 reflectMayTakeTime: "反映されるまで時間がかかる場合があるよ。"
 failedToFetchAccountInformation: "アカウント情報の取得に失敗したよ"
+rateLimitExceeded: "レート制限を超えたよ"
+cropImage: "画像のクロップ"
+cropImageAsk: "画像をクロップする？"
 
 emojiGen: "絵文字を生成"
 emojiAlign: "文字揃え"
@@ -1157,7 +1160,6 @@ _sfx:
   reversiPutWhite: "リバーシ: 白が打ったとき"
 
 _ago:
-  unknown: "謎"
   future: "未来"
   justNow: "たった今"
   secondsAgo: "{n}秒前"
@@ -1204,6 +1206,7 @@ _2fa:
   registerKey: "キーを登録"
   step1: "まず、{a}や{b}にゃどの認証アプリをお使いのデバイスにインスタールするよ。"
   step2: "次に、表示されているQRコードをアプリでスキャンするよ。"
+  step2Url: "デスクトップアプリでは次のURLを入力するよ:"
   step3: "アプリに表示されているトークンを入力して完了だよ。"
   step4: "これからログインするときも、同じようにトークンを入力するよ。"
   securityKeyInfo: "FIDO2をサポートするハードウェアセキュリティキーもしくは端末の指紋認証やPINを使用してログインするように設定できるよ。"
@@ -1778,8 +1781,9 @@ _notification:
   youWereFollowed: "フォローされたよ"
   youReceivedFollowRequest: "フォローリクエストが来たよ"
   yourFollowRequestAccepted: "フォローリクエストが承認されたよ"
-  youWereInvitedToGroup: "グループに招待されたよ"
   pollEnded: "アンケートの結果が出たよ"
+  emptyPushNotificationMessage: "プッシュ通知の更新をしたよ"
+  youWereInvitedToGroup: "{userName}があなたをグループに招待したよ"
 
   _types:
     all: "すべて"
@@ -1795,6 +1799,11 @@ _notification:
     followRequestAccepted: "フォローが受理された"
     groupInvited: "グループに招待された"
     app: "連携アプリからの通知"
+
+  _actions:
+    followBack: "フォローバック"
+    reply: "返信"
+    renote: "Renote"
 
 _deck:
   alwaysShowMainColumn: "常にメインカラムを表示"
