@@ -20,6 +20,7 @@
 <script lang="ts" setup>
 import { } from 'vue';
 import * as misskey from 'misskey-js';
+import MkVisibility from '@/components/visibility.vue';
 import { notePage } from '@/filters/note';
 import { userPage } from '@/filters/user';
 

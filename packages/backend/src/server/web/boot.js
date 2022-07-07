@@ -14,10 +14,10 @@
 // ブロックの中に入れないと、定義した変数がブラウザのグローバルスコープに登録されてしまい邪魔なので
 (async () => {
 	window.onerror = (e) => {
-		renderError('SOMETHING_HAPPENED', e.toString());
+		renderError('SOMETHING_HAPPENED', e);
 	};
 	window.onunhandledrejection = (e) => {
-		renderError('SOMETHING_HAPPENED_IN_PROMISE', e.toString());
+		renderError('SOMETHING_HAPPENED_IN_PROMISE', e);
 	};
 
 	const v = localStorage.getItem('v') || VERSION;
@@ -57,7 +57,7 @@
 	import(`/assets/${CLIENT_ENTRY}`)
 		.catch(async e => {
 			await checkUpdate();
-			renderError('APP_FETCH_FAILED', JSON.stringify(e));
+			renderError('APP_FETCH_FAILED', e);
 		})
 	//#endregion
 
@@ -102,7 +102,12 @@
 		document.head.appendChild(style);
 	}
 
-	// eslint-disable-next-line no-inner-declarations
+	async function addStyle(styleText) {
+		let css = document.createElement('style');
+		css.appendChild(document.createTextNode(styleText));
+		document.head.appendChild(css);
+	}
+
 	function renderError(code, details) {
 		document.documentElement.innerHTML = `
 			<style>body { background-color: #010080; }</style>

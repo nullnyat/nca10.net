@@ -13,43 +13,43 @@ export const notePostInterruptors = [];
 export const defaultStore = markRaw(new Storage('base', {
 	tutorial: {
 		where: 'account',
-		default: 0
+		default: 0,
 	},
 	keepCw: {
 		where: 'account',
-		default: true
+		default: true,
 	},
 	showFullAcct: {
 		where: 'account',
-		default: false
+		default: false,
 	},
 	rememberNoteVisibility: {
 		where: 'account',
-		default: false
+		default: false,
 	},
 	defaultNoteVisibility: {
 		where: 'account',
-		default: 'public'
+		default: 'public',
 	},
 	defaultNoteLocalOnly: {
 		where: 'account',
-		default: false
+		default: false,
 	},
 	uploadFolder: {
 		where: 'account',
-		default: null as string | null
+		default: null as string | null,
 	},
 	pastedFileName: {
 		where: 'account',
-		default: 'yyyy-MM-dd HH-mm-ss [{{number}}]'
+		default: 'yyyy-MM-dd HH-mm-ss [{{number}}]',
 	},
 	keepOriginalUploading: {
 		where: 'account',
-		default: false
+		default: false,
 	},
 	memo: {
 		where: 'account',
-		default: null
+		default: null,
 	},
 	reactions: {
 		where: 'account',
@@ -57,11 +57,11 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	mutedWords: {
 		where: 'account',
-		default: []
+		default: [],
 	},
 	mutedAds: {
 		where: 'account',
-		default: [] as string[]
+		default: [] as string[],
 	},
 
 	menu: {
@@ -79,11 +79,22 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	visibility: {
 		where: 'deviceAccount',
-		default: 'public' as 'public' | 'home' | 'followers' | 'specified'
+		default: 'public' as 'public' | 'home' | 'followers' | 'specified',
 	},
 	localOnly: {
 		where: 'deviceAccount',
-		default: false
+		default: false,
+	},
+	statusbars: {
+		where: 'deviceAccount',
+		default: [] as {
+			name: string;
+			id: string;
+			type: string;
+			size: 'verySmall' | 'small' | 'medium' | 'large' | 'veryLarge';
+			black: boolean;
+			props: Record<string, any>;
+		}[],
 	},
 	widgets: {
 		where: 'deviceAccount',
@@ -92,14 +103,14 @@ export const defaultStore = markRaw(new Storage('base', {
 			id: string;
 			place: string | null;
 			data: Record<string, any>;
-		}[]
+		}[],
 	},
 	tl: {
 		where: 'deviceAccount',
 		default: {
 			src: 'home' as 'home' | 'local' | 'social' | 'global',
-			arg: null
-		}
+			arg: null,
+		},
 	},
 
 	overridedDeviceKind: {
@@ -108,87 +119,87 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	serverDisconnectedBehavior: {
 		where: 'device',
-		default: 'quiet' as 'quiet' | 'reload' | 'dialog'
+		default: 'quiet' as 'quiet' | 'reload' | 'dialog',
 	},
 	nsfw: {
 		where: 'device',
-		default: 'respect' as 'respect' | 'force' | 'ignore'
+		default: 'respect' as 'respect' | 'force' | 'ignore',
 	},
 	animation: {
 		where: 'device',
-		default: true
+		default: true,
 	},
 	animatedMfm: {
 		where: 'device',
-		default: true
+		default: true,
 	},
 	loadRawImages: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	imageNewTab: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	disableShowingAnimatedImages: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	disablePagesScript: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	useOsNativeEmojis: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	disableDrawer: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	useBlurEffectForModal: {
 		where: 'device',
-		default: true
+		default: true,
 	},
 	useBlurEffect: {
 		where: 'device',
-		default: true
+		default: true,
 	},
 	showFixedPostForm: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	enableInfiniteScroll: {
 		where: 'device',
-		default: true
+		default: true,
 	},
 	useReactionPickerForContextMenu: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	showGapBetweenNotesInTimeline: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	darkMode: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	instanceTicker: {
 		where: 'device',
-		default: 'remote' as 'none' | 'remote' | 'always'
+		default: 'remote' as 'none' | 'remote' | 'always',
 	},
 	reactionPickerSize: {
 		where: 'device',
-		default: 1
+		default: 1,
 	},
 	reactionPickerWidth: {
 		where: 'device',
-		default: 1
+		default: 1,
 	},
 	reactionPickerHeight: {
 		where: 'device',
-		default: 2
+		default: 2,
 	},
 	reactionPickerUseDrawerForMobile: {
 		where: 'device',
@@ -196,43 +207,47 @@ export const defaultStore = markRaw(new Storage('base', {
 	},
 	recentlyUsedEmojis: {
 		where: 'device',
-		default: [] as string[]
+		default: [] as string[],
 	},
 	recentlyUsedUsers: {
 		where: 'device',
-		default: [] as string[]
+		default: [] as string[],
 	},
 	defaultSideView: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	menuDisplay: {
 		where: 'device',
-		default: 'sideFull' as 'sideFull' | 'sideIcon' | 'top'
+		default: 'sideFull' as 'sideFull' | 'sideIcon' | 'top',
 	},
 	reportError: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	squareAvatars: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	postFormWithHashtags: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 	postFormHashtags: {
 		where: 'device',
-		default: ''
+		default: '',
 	},
 	themeInitial: {
 		where: 'device',
 		default: true,
 	},
+	numberOfPageCache: {
+		where: 'device',
+		default: 5,
+	},
 	aiChanMode: {
 		where: 'device',
-		default: false
+		default: false,
 	},
 }));
 
@@ -287,6 +302,14 @@ export class ColdDeviceStorage {
 	}
 
 	public static set<T extends keyof typeof ColdDeviceStorage.default>(key: T, value: typeof ColdDeviceStorage.default[T]): void {
+		// 呼び出し側のバグ等で undefined が来ることがある
+		// undefined を文字列として localStorage に入れると参照する際の JSON.parse でコケて不具合の元になるため無視
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+		if (value === undefined) {
+			console.error(`attempt to store undefined value for key '${key}'`);
+			return;
+		}
+
 		localStorage.setItem(PREFIX + key, JSON.stringify(value));
 
 		for (const watcher of this.watchers) {
@@ -323,7 +346,7 @@ export class ColdDeviceStorage {
 			set: (value: unknown) => {
 				const val = value;
 				ColdDeviceStorage.set(key, val);
-			}
+			},
 		};
 	}
 }

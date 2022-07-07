@@ -149,7 +149,7 @@ export default defineComponent({
 	background: none;
 	border: solid 2px var(--accent);
 	border-radius: 5px;
-	overflow: clip;
+	overflow: hidden; overflow: clip;
 	box-sizing: border-box;
 	transition: background 0.1s ease;
 
