@@ -761,6 +761,10 @@ hide: "Ukryj"
 searchByGoogle: "Szukaj"
 indefinitely: "Nigdy"
 file: "Pliki"
+reverse: "Odwróć"
+colored: "Kolorowe"
+label: "Etykieta"
+account: "Konta"
 _ffVisibility:
   public: "Publikuj"
 _ad:

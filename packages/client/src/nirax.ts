@@ -3,6 +3,7 @@
 import { EventEmitter } from 'eventemitter3';
 import { Ref, Component, ref, shallowRef, ShallowRef } from 'vue';
 import { pleaseLogin } from '@/scripts/please-login';
+import { safeURIDecode } from '@/scripts/safe-uri-decode';
 
 type RouteDef = {
 	path: string;
@@ -70,7 +71,7 @@ export class Router extends EventEmitter<{
 	private currentKey = Date.now().toString();
 
 	public currentRoute: ShallowRef<RouteDef | null> = shallowRef(null);
-	public navHook: ((path: string) => boolean) | null = null;
+	public navHook: ((path: string, flag?: any) => boolean) | null = null;
 
 	constructor(routes: Router['routes'], currentPath: Router['currentPath']) {
 		super();
@@ -116,7 +117,7 @@ export class Router extends EventEmitter<{
 					}
 					if (p.wildcard) {
 						if (parts.length !== 0) {
-							props.set(p.name, parts.join('/'));
+							props.set(p.name, safeURIDecode(parts.join('/')));
 							parts = [];
 						}
 						break pathMatchLoop;
@@ -124,10 +125,12 @@ export class Router extends EventEmitter<{
 						if (p.startsWith) {
 							if (parts[0] == null || !parts[0].startsWith(p.startsWith)) continue forEachRouteLoop;
 
-							props.set(p.name, parts[0].substring(p.startsWith.length));
+							props.set(p.name, safeURIDecode(parts[0].substring(p.startsWith.length)));
 							parts.shift();
 						} else {
-							props.set(p.name, parts[0]);
+							if (parts[0]) {
+								props.set(p.name, safeURIDecode(parts[0]));
+							}
 							parts.shift();
 						}
 					}
@@ -137,7 +140,7 @@ export class Router extends EventEmitter<{
 			if (parts.length !== 0) continue forEachRouteLoop;
 
 			if (route.hash != null && hash != null) {
-				props.set(route.hash, hash);
+				props.set(route.hash, safeURIDecode(hash));
 			}
 
 			if (route.query != null && queryString != null) {
@@ -147,7 +150,7 @@ export class Router extends EventEmitter<{
 				for (const q in route.query) {
 					const as = route.query[q];
 					if (queryObject[q]) {
-						props.set(as, queryObject[q]);
+						props.set(as, safeURIDecode(queryObject[q]));
 					}
 				}
 			}
@@ -210,14 +213,14 @@ export class Router extends EventEmitter<{
 		return this.currentKey;
 	}
 
-	public push(path: string) {
+	public push(path: string, flag?: any) {
 		const beforePath = this.currentPath;
 		if (path === beforePath) {
 			this.emit('same');
 			return;
 		}
 		if (this.navHook) {
-			const cancel = this.navHook(path);
+			const cancel = this.navHook(path, flag);
 			if (cancel) return;
 		}
 		this.navigate(path, null);
